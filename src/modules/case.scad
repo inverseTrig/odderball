@@ -280,21 +280,6 @@ module case(
                                     squircle(usbInnerHoleSize, radius = 2, center = true);
                             }
                             
-                        // trrs
-                        trrsOuterHoleSize = 5.5;
-                        translate(trrsCutoutPosition)
-                            rotate([90,0,0]){
-
-                                // outer hole
-                                translate([0,0,-cutoutMuch])
-                                    linear_extrude(cutoutMuch)
-                                        circle(d = TRRS_CUTOUT_SIZE + TRRS_CUTOUT_OUTER_DELTA);
-
-                                // inner hole
-                                linear_extrude(cutoutMuch)
-                                    circle(d = TRRS_CUTOUT_SIZE);
-                            }
-                        
                         // reset button
                         resetHoleSize = 1.0;
                         translate([PLATE_BEZEL + 39.1, 68, 5.5])
