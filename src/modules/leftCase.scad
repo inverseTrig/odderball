@@ -18,7 +18,7 @@ module leftCase(){
             flangeStandoffs = true),
         caseSection(
             keyPositions = THUMB_GRID,
-            keyHeight = 1.25,
+            keyHeight = 1.0,
             offset = THUMB_OFFSET,
             rotation = THUMB_ROTATION,
             boltPositions = THUMB_BOLT_HOLES,
