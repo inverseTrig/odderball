@@ -12,7 +12,8 @@ SWITCH_WIDTH = 14;
 NUT_DIAMETER = 4;
 NUT_HEIGHT = 3;
 NUT_TOLERENCE = 0.5;
-BOLT_DIAMETER = 2.4; // M2 cleanance
+// BOLT_DIAMETER = 2.4; // M2 cleanance
+BOLT_DIAMETER = 3.0; // M2 Heat Insert Clearance
 BOLT_TOLERENCE = 0.1;
 BOLT_TOP_DIAMETER = 3.8;
 BOLT_TOP_HEIGHT = 2.5;
@@ -117,17 +118,17 @@ THUMB_GRID = [[-1, -0.1], [0, 0], [1, 0.1]];
 
 THUMB_BOLT_HOLES = 
     [[0.95, 0.925],
-     [1.05, 0.175],
-     [-0.05, 0.825],
-     [0.05, 0.075]];
+     [0.95, 0.075],
+     [-0.025, 0.825],
+     [-0.025, 0.075]];
 
 THUMB_TRACKBALL_GRID = [[-1, -0.1], [0, 0], [1.43, 0, "pmw" /* "adns" */ ]];
 
 THUMB_TRACKBALL_BOLT_HOLES = 
     [[0.95, 0.925],
      [0.95, 0.075],
-     [-0.05, 0.825],
-     [0.05, 0.075]];
+     [-0.025, 0.825],
+     [-0.025, 0.075]];
 
 FEET_POSITIONS =
     [[0.3, 2.75], [5.6, 2.85],

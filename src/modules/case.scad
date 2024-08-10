@@ -124,8 +124,8 @@ module case(
             for(boltPosition = boltPositions)
                 translate([boltPosition.x, boltPosition.y * keyHeight, 0] * 1U + [PLATE_BEZEL, PLATE_BEZEL, boltOffset]){
                     cylinder(h = boltLength, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
-                    translate([0,0,-big])
-                        cylinder(h = big + NUT_HEIGHT, r = NUT_DIAMETER * 0.5 + NUT_TOLERENCE, $fn = 6);
+                    // translate([0,0,-big])
+                    //     cylinder(h = big + NUT_HEIGHT, r = NUT_DIAMETER * 0.5 + NUT_TOLERENCE);
                 }
         }
         
@@ -170,38 +170,38 @@ module case(
                                     nutAndBoltChannels();
                                 }
                                 
-                                difference(){
-                                    union(){
-                                        for(boltPosition = boltPositions)
-                                            translate([boltPosition.x, boltPosition.y * keyHeight, 0] * 1U + [PLATE_BEZEL, PLATE_BEZEL, caseBottomThickness]){
-                                                
-                                                difference(){
-                                                    union(){
-                                                        housingRadius = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE;
+//                                difference(){
+//                                    union(){
+//                                        for(boltPosition = boltPositions)
+//                                            translate([boltPosition.x, boltPosition.y * keyHeight, 0] * 1U + [PLATE_BEZEL, PLATE_BEZEL, caseBottomThickness]){
+//                                                
+//                                                difference(){
+//                                                    union(){
+//                                                        housingRadius = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE;
 
-                                                        if(flangeStandoffs){
-                                                            flangeHeight = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2;
-                                                            flangeOffset = 5;
-                                                            translate([0, flangeOffset / 2, flangeHeight / 2])
-                                                                linear_extrude(
-                                                                    height = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2,
-                                                                    scale = 0.5,
-                                                                    center = true)
-                                                                    translate([0,-flangeOffset,0])
-                                                                        circle(r = housingRadius * 2);
-                                                        }
-                                                        else 
-                                                            cylinder(h = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2, r1 = housingRadius * 1.5, r2 = housingRadius);
-
-                                                        cylinder(h = plateUndersideClearance, r = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
-                                                    }
-                                                    cylinder(h = plateUndersideClearance, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
-                                                }
-                                            }
-                                    }
+//                                                        if(flangeStandoffs){
+//                                                            flangeHeight = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2;
+//                                                            flangeOffset = 5;
+//                                                            translate([0, flangeOffset / 2, flangeHeight / 2])
+//                                                                linear_extrude(
+//                                                                    height = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2,
+//                                                                    scale = 0.5,
+//                                                                    center = true)
+//                                                                    translate([0,-flangeOffset,0])
+//                                                                        circle(r = housingRadius * 2);
+//                                                        }
+//                                                        else 
+//                                                            cylinder(h = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2, r1 = housingRadius * 1.5, r2 = housingRadius);
+//
+//                                                        cylinder(h = plateUndersideClearance, r = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
+//                                                    }
+//                                                    cylinder(h = plateUndersideClearance, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
+ //                                               }
+//                                            }
+ //                                   }
                                     
-                                    nutAndBoltChannels();
-                                }
+  //                                  nutAndBoltChannels();
+//                                }
                             }
                         }
     }
