@@ -248,7 +248,7 @@ module case(
                 rotate([HAND_ROTATION.x,0,0])
                     translate([0,0, CASE_BOTTOM_THICKNESS]){
                         
-                        cutoutMuch = 10;
+                        cutoutMuch = 15;
 
                         // thumb cluster channel
                         translate([87.5,9.2,0])
