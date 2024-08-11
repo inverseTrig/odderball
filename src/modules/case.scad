@@ -123,7 +123,7 @@ module case(
 
             for(boltPosition = boltPositions)
                 translate([boltPosition.x, boltPosition.y * keyHeight, 0] * 1U + [PLATE_BEZEL, PLATE_BEZEL, boltOffset]){
-                    cylinder(h = boltLength, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
+                    cylinder(h = boltLength, r = SCREW_INSERT_DIAMETER * 0.5 + BOLT_TOLERENCE);
                     // translate([0,0,-big])
                     //     cylinder(h = big + NUT_HEIGHT, r = NUT_DIAMETER * 0.5 + NUT_TOLERENCE);
                 }
@@ -163,7 +163,7 @@ module case(
                                                 if(keyPosition.z == "pmw")
                                                     translate([keyPosition.x + 0.5, (keyPosition.y + 0.5) * keyHeight] * 1U + [PLATE_BEZEL, PLATE_BEZEL])
                                                         offset(delta = CASE_PLATE_TOLERENCE)
-                                                            square([PMW_PCB_WIDTH, PMW_PCB_HEIGHT], center = true);
+                                                            square([PMW3610_PCB_WIDTH, PMW3610_PCB_HEIGHT], center = true);
                                             }
                                         }
 
@@ -177,7 +177,7 @@ module case(
 //                                                
 //                                                difference(){
 //                                                    union(){
-//                                                        housingRadius = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE;
+//                                                        housingRadius = CASE_BOLT_HOUSING_WIDTH + SCREW_INSERT_DIAMETER * 0.5 + BOLT_TOLERENCE;
 
 //                                                        if(flangeStandoffs){
 //                                                            flangeHeight = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2;
@@ -193,9 +193,9 @@ module case(
 //                                                        else 
 //                                                            cylinder(h = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2, r1 = housingRadius * 1.5, r2 = housingRadius);
 //
-//                                                        cylinder(h = plateUndersideClearance, r = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
+//                                                        cylinder(h = plateUndersideClearance, r = CASE_BOLT_HOUSING_WIDTH + SCREW_INSERT_DIAMETER * 0.5 + BOLT_TOLERENCE);
 //                                                    }
-//                                                    cylinder(h = plateUndersideClearance, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
+//                                                    cylinder(h = plateUndersideClearance, r = SCREW_INSERT_DIAMETER * 0.5 + BOLT_TOLERENCE);
  //                                               }
 //                                            }
  //                                   }
