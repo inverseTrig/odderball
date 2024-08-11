@@ -147,6 +147,18 @@ THUMB_FEET_POSITIONS =
     [[0.3, 2.75], [5.6, 2.85],
      [0.3, 0.3], [6.45, -1.25]];
 
+MCU_HOLDER_GRID =
+    [
+        [3, 2.37], [4, 2.25],
+        [3, 1.37], [4, 1.25],
+        [3, 1.15], [4, 1.15],
+    ];
+
+MCU_HOLDER_BOLT_HOLES =
+    [
+        [4, 2.25],
+    ];
+
 // plane rotations
 
 HAND_ROTATION = [5, -8.5, 0];
