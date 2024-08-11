@@ -34,29 +34,38 @@ module pmw3610Cover(){
     }
 
     difference(){
-        linear_extrude(getStandoffHeight())
-            difference(){
 
-                union(){
-                    square([PMW_PCB_WIDTH, PMW_PCB_HEIGHT], center = true);
-                    offset(1.5)
-                        boltHoles();
-                    
-                    offset(1.5)
-                        pcbHeatInsertHoles();
+        union(){
+            linear_extrude(getStandoffHeight())
+                difference(){
+
+                    union(){
+                        square([PMW_PCB_WIDTH, PMW_PCB_HEIGHT], center = true);
+                        offset(1.5)
+                            boltHoles();
+                    }
+
+                    boltHoles();
+
+                    pcbHeatInsertHoles();
+
+                    // laser channel
+                    squircle(
+                        size = [SENSOR_CHANNEL_WIDTH, SENSOR_CHANNEL_HEIGHT],
+                        radius = 1,
+                        center = true);
                 }
 
-                boltHoles();
-                
-                pcbHeatInsertHoles();
+            translate([0, 0, -1])
+                linear_extrude(getStandoffHeight() + 1)
+                    difference() {
+                        offset(1.5)
+                            pcbHeatInsertHoles();
+                        pcbHeatInsertHoles();
+                    }
+        }
 
-                // laser channel
-                squircle(
-                    size = [SENSOR_CHANNEL_WIDTH, SENSOR_CHANNEL_HEIGHT],
-                    radius = 1,
-                    center = true);
-            }
-        
+
         // cutout for trackball
         translate([0, 0, TRACKBALL_POSITION_Z + getStandoffHeight()])
             sphere(d = TRACKBALL_DIAMETER + SENDOR_TRACKBALL_CLEARANCE);
